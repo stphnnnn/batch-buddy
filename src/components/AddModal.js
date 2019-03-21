@@ -2,16 +2,14 @@ import React from 'react';
 import Form from './Form';
 import { StoreContext } from '../global/storeContext';
 
-export const AddModal = ({ closeModal }) => {
-  const [state, dispatch] = React.useContext(StoreContext);
-
+export const AddModal = ({ closeModal, dispatch }) => {
   return (
     <div
       style={{
         background: 'white',
         borderRadius: 10,
         padding: 50,
-        maxWidth: 650,
+        maxWidth: 750,
         width: '100%',
       }}
     >
