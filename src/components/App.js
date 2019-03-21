@@ -10,7 +10,7 @@ const App = props => {
   const [searchValue, setSearchValue] = React.useState('');
   return (
     <StoreProvider>
-      <div className="sans-serif mw7 center ph3">
+      <div>
         <header className="Header pv4 flex items-center justify-between">
           <h1 className="f4 ma0 red">BatchBuddy®</h1>
           <Modal modal={AddModal}>
