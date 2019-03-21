@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "classnames": "2.2.6",
     "convert-units": "2.3.4",
     "formik": "1.5.1",
     "nanoid": "2.0.1",
