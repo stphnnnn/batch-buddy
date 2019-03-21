@@ -1,5 +1,6 @@
 import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
+import Modal from 'react-mega-modal';
 import { IngredientsTable } from './IngredientsTable';
 
 const RecipeListItem = ({ item, index, dispatch }) => {
@@ -52,16 +53,43 @@ const RecipeListItem = ({ item, index, dispatch }) => {
             quantity={item.quantity}
           />
           <div className="f7 mt3">
-            <button
-              onClick={() =>
-                dispatch({
-                  type: 'removeItem',
-                  payload: item.id,
-                })
-              }
+            <Modal
+              modal={({ closeModal }) => (
+                <div
+                  style={{
+                    background: 'white',
+                    borderRadius: 10,
+                    padding: 50,
+                    maxWidth: 650,
+                    width: '100%',
+                  }}
+                >
+                  <h2 className="mt0">
+                    Are you sure want to remove this recipe?
+                  </h2>
+                  <p>This action can not be undone, be careful!</p>
+                  <button
+                    className="f5 link br-pill dim pv3 ph4 dib white bg-red"
+                    onClick={() =>
+                      dispatch({
+                        type: 'removeItem',
+                        payload: item.id,
+                      })
+                    }
+                  >
+                    Yes, I'm sure
+                  </button>
+                  <button
+                    className="f5 link br-pill dim pv3 ph4 dib black bg-light-gray ml2"
+                    onClick={closeModal}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              )}
             >
-              Remove
-            </button>
+              {({ openModal }) => <button onClick={openModal}>Remove</button>}
+            </Modal>
             <button className="ml2">Edit</button>
           </div>
         </div>
