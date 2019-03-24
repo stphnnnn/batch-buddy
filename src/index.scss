@@ -6,7 +6,9 @@ button {
   background: none;
   border: none;
   font: inherit;
-  cursor: pointer;
+  &:not(:disabled) {
+    cursor: pointer;
+  }
 }
 
 select {

@@ -1,6 +1,5 @@
 import React from 'react';
-import Form from './Form';
-import { StoreContext } from '../global/storeContext';
+import { AddForm } from './AddForm';
 
 export const AddModal = ({ closeModal, dispatch }) => {
   return (
@@ -9,16 +8,13 @@ export const AddModal = ({ closeModal, dispatch }) => {
         background: 'white',
         borderRadius: 10,
         padding: 50,
-        maxWidth: 750,
+        maxWidth: 825,
         width: '100%',
       }}
     >
-      <Form
-        handleCancel={closeModal}
-        handleSubmit={item => {
-          dispatch({ type: 'addItem', payload: item });
-          closeModal();
-        }}
+      <AddForm
+        handleSubmit={item => dispatch({ type: 'addItem', payload: item })}
+        closeModal={closeModal}
       />
     </div>
   );

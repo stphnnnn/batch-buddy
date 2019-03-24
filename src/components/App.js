@@ -1,6 +1,5 @@
 import React from 'react';
 import Modal from 'react-mega-modal';
-
 import { StoreProvider, StoreContext } from '../global/storeContext';
 import { RecipeList } from './RecipeList';
 import { AddModal } from './AddModal';

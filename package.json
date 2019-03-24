@@ -9,9 +9,8 @@
     "nanoid": "2.0.1",
     "react": "^16.8.4",
     "react-beautiful-dnd": "10.1.0",
-    "react-dnd": "7.3.2",
     "react-dom": "^16.8.4",
-    "react-mega-modal": "0.1.2",
+    "react-mega-modal": "^0.1.4",
     "react-number-format": "4.0.7",
     "react-scripts": "2.1.8",
     "tachyons": "4.11.1"

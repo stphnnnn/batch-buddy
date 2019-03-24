@@ -1,9 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
-export const Button = props => (
+export const Button = ({ type = 'button', className, children, ...props }) => (
   <button
-    {...props}
     className={classNames(
       'f5',
       'link',
@@ -13,10 +12,11 @@ export const Button = props => (
       'ph4',
       'dib',
       'w',
-      props.className
+      className
     )}
-    type="button"
+    type={type}
+    {...props}
   >
-    {props.children}
+    {children}
   </button>
 );
