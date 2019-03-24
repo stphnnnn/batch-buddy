@@ -1,19 +1,16 @@
 import React from 'react';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
-
 import { StoreContext } from '../global/storeContext';
-
 import RecipeListItem from './RecipeListItem';
 
 export const RecipeList = ({ searchValue }) => {
   const [state, dispatch] = React.useContext(StoreContext);
 
-  const filteredItems = state.items.filter(item =>
-    item.name.toLowerCase().includes(searchValue.toLowerCase())
+  const filteredItems = state.items.filter(({ name }) =>
+    name.toLowerCase().includes(searchValue.toLowerCase())
   );
 
-  const onDragEnd = result => {
-    const { destination, source } = result;
+  const onDragEnd = ({ destination, source }) => {
     if (!destination) {
       return;
     }

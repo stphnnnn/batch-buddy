@@ -1,16 +1,16 @@
 {
   "name": "baker-buddy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
+    "classnames": "2.2.6",
     "convert-units": "2.3.4",
     "formik": "1.5.1",
     "nanoid": "2.0.1",
     "react": "^16.8.4",
     "react-beautiful-dnd": "10.1.0",
-    "react-dnd": "7.3.2",
     "react-dom": "^16.8.4",
-    "react-mega-modal": "0.1.2",
+    "react-mega-modal": "^0.1.4",
     "react-number-format": "4.0.7",
     "react-scripts": "2.1.8",
     "tachyons": "4.11.1"
@@ -31,6 +31,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "node-sass": "4.11.0"
+    "node-sass": "4.11.0",
+    "prettier": "1.16.4"
   }
 }

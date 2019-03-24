@@ -6,7 +6,19 @@ button {
   background: none;
   border: none;
   font: inherit;
-  cursor: pointer;
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+select {
+  background-color: #fff;
+  border: 1px solid hsl(220, 20%, 80%);
+  border-radius: 0.25rem;
+  display: block;
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 0;
 }
 
 .IngredientsTable {

@@ -68,12 +68,4 @@ export const currencyFormatter = new Intl.NumberFormat('en-GB', {
   currency: 'GBP',
 });
 
-// export default options.reduce(
-//   (units, unit) => ({
-//     ...units,
-//     [unit]: convert().describe(unit),
-//   }),
-//   {}
-// );
-
 export default units;
