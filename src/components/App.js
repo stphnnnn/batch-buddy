@@ -3,6 +3,7 @@ import { StoreProvider } from '../global/storeContext';
 import { RecipeList } from './RecipeList';
 import { IngredientTotals } from './IngredientTotals';
 import { AddModal } from './AddModal';
+import { Search } from './Search';
 
 const App = props => {
   const [searchValue, setSearchValue] = React.useState('');
@@ -13,10 +14,8 @@ const App = props => {
           <h1 className="f4 ma0 red">BatchBuddy®</h1>
           <AddModal />
         </header>
-        <input
-          className="w-100 f4 h3 ph3 mb5 bn bg-near-white br3"
-          type="text"
-          placeholder="Search"
+        <Search
+          value={searchValue}
           onChange={event => setSearchValue(event.target.value)}
         />
         <RecipeList searchValue={searchValue} />
