@@ -20,6 +20,7 @@ export const FieldGroup = ({
         'bg-transparent ba b--black-20 pa3 mb3 w-100',
         fieldClassName
       )}
+      id={props.name}
       {...props}
     />
   </div>
