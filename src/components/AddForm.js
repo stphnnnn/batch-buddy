@@ -19,6 +19,7 @@ export const AddForm = ({ handleSubmit, closeModal }) => {
       initialValues={{
         name: '',
         description: '',
+        useBakerPercentages: false,
         baseAmount: '',
         baseUnit: 'g',
         ingredients: [{ ...defaultIngredient }],
@@ -60,6 +61,24 @@ export const AddForm = ({ handleSubmit, closeModal }) => {
               fieldClassName="w-auto"
             />
 
+            {props.values.useBakerPercentages && (
+              <div className="flex">
+                <FieldGroup
+                  labelText="Total Flour"
+                  className="w-60 mr1"
+                  name={`baseAmount`}
+                  placeholder="0.00"
+                  type="number"
+                />
+                <UnitInput
+                  labelText="Unit"
+                  className="w-40"
+                  fieldClassName="input-reset"
+                  name="baseUnit"
+                />
+              </div>
+            )}
+
             <FieldArray
               name="ingredients"
               render={arrayHelpers => (
@@ -67,6 +86,7 @@ export const AddForm = ({ handleSubmit, closeModal }) => {
                   <div className="flex justify-between bt b--light-gray pt3 mt3" />
                   {props.values.ingredients.map((ingredient, index) => (
                     <IngredientInput
+                      formProps={props}
                       index={index}
                       ingredient={ingredient}
                       key={index}
