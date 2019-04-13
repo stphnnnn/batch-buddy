@@ -1,21 +1,22 @@
 import React from 'react';
-import { AddForm } from './AddForm';
+import Modal from 'react-mega-modal';
+import { StoreContext } from '../global/storeContext';
+import { Button } from './Button';
+import { AddModalContent } from './AddModalContent';
 
-export const AddModal = ({ closeModal, dispatch }) => {
+export const AddModal = () => {
+  const [state, dispatch] = React.useContext(StoreContext);
   return (
-    <div
-      style={{
-        background: 'white',
-        borderRadius: 10,
-        padding: 50,
-        maxWidth: 825,
-        width: '100%',
-      }}
+    <Modal
+      modal={({ closeModal }) => (
+        <AddModalContent closeModal={closeModal} dispatch={dispatch} />
+      )}
     >
-      <AddForm
-        handleSubmit={item => dispatch({ type: 'addItem', payload: item })}
-        closeModal={closeModal}
-      />
-    </div>
+      {({ openModal }) => (
+        <Button className="white bg-red" onClick={openModal}>
+          + Add
+        </Button>
+      )}
+    </Modal>
   );
 };

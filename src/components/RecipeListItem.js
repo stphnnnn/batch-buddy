@@ -49,6 +49,7 @@ const RecipeListItem = ({ item, index, dispatch }) => {
             </div>
           </div>
           <IngredientsTable
+            showBakerPercentages={item.useBakerPercentages}
             ingredients={item.ingredients}
             quantity={item.quantity}
           />

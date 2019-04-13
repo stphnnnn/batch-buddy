@@ -1,6 +1,5 @@
 import React from 'react';
 import units from '../global/units';
-
 import { FieldGroup } from './FieldGroup';
 
 export const UnitInput = props => (
