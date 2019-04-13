@@ -2,6 +2,7 @@ import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import Modal from 'react-mega-modal';
 import { IngredientsTable } from './IngredientsTable';
+import { AddModalContent } from './AddModalContent';
 
 const RecipeListItem = ({ item, index, dispatch }) => {
   const dispatchQuantity = quantity =>
@@ -91,7 +92,21 @@ const RecipeListItem = ({ item, index, dispatch }) => {
             >
               {({ openModal }) => <button onClick={openModal}>Remove</button>}
             </Modal>
-            <button className="ml2">Edit</button>
+            <Modal
+              modal={({ closeModal }) => (
+                <AddModalContent
+                  closeModal={closeModal}
+                  item={item}
+                  dispatch={dispatch}
+                />
+              )}
+            >
+              {({ openModal }) => (
+                <button className="ml2" onClick={openModal}>
+                  Edit
+                </button>
+              )}
+            </Modal>
           </div>
         </div>
       )}
