@@ -10,6 +10,16 @@ export function reducer(state, action) {
           { ...action.payload, quantity: 1, id: `item_${nanoid()}` },
         ],
       };
+    case 'updateItem':
+      return {
+        ...state,
+        items: state.items.map(item => {
+          if (item.id === action.payload.id) {
+            return action.payload;
+          }
+          return item;
+        }),
+      };
     case 'removeItem':
       return {
         ...state,

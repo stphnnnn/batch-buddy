@@ -13,7 +13,8 @@ const defaultIngredient = {
   unit: 'g',
 };
 
-export const AddForm = ({ handleSubmit, closeModal }) => {
+export const AddForm = ({ handleSubmit, closeModal, item }) => {
+  const isEditing = !!item;
   return (
     <Formik
       initialValues={{
@@ -23,6 +24,7 @@ export const AddForm = ({ handleSubmit, closeModal }) => {
         baseAmount: '',
         baseUnit: 'g',
         ingredients: [{ ...defaultIngredient }],
+        ...item,
       }}
       onSubmit={(values, { setSubmitting, resetForm }) => {
         handleSubmit(values);
@@ -32,10 +34,11 @@ export const AddForm = ({ handleSubmit, closeModal }) => {
       }}
     >
       {props => {
-        console.log(props);
         return (
           <Form>
-            <h2 className="mt0">Add a recipe</h2>
+            <h2 className="mt0">
+              {!isEditing ? 'Add a recipe' : 'Edit recipe'}
+            </h2>
             <FieldGroup
               labelText="Recipe Name"
               name="name"
@@ -61,7 +64,7 @@ export const AddForm = ({ handleSubmit, closeModal }) => {
               fieldClassName="w-auto"
             />
 
-            {props.values.useBakerPercentages && (
+            {/* {props.values.useBakerPercentages && (
               <div className="flex">
                 <FieldGroup
                   labelText="Total Flour"
@@ -77,7 +80,7 @@ export const AddForm = ({ handleSubmit, closeModal }) => {
                   name="baseUnit"
                 />
               </div>
-            )}
+            )} */}
 
             <FieldArray
               name="ingredients"
@@ -117,7 +120,7 @@ export const AddForm = ({ handleSubmit, closeModal }) => {
                 disabled={props.isSubmitting}
                 type="submit"
               >
-                Add Recipe
+                {!isEditing ? 'Add Recipe' : 'Save Changes'}
               </Button>
               <Button className="black bg-light-gray" onClick={closeModal}>
                 Cancel
