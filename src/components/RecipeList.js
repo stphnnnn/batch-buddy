@@ -1,10 +1,10 @@
 import React from 'react';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
-import { StoreContext } from '../global/storeContext';
+import { useStore } from '../global/storeContext';
 import RecipeListItem from './RecipeListItem';
 
 export const RecipeList = ({ searchValue }) => {
-  const [state, dispatch] = React.useContext(StoreContext);
+  const { state, dispatch } = useStore();
 
   const filteredItems = state.items.filter(({ name }) =>
     name.toLowerCase().includes(searchValue.toLowerCase())
