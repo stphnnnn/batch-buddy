@@ -6,6 +6,7 @@ button {
   background: none;
   border: none;
   font: inherit;
+  user-select: none;
   &:not(:disabled) {
     cursor: pointer;
   }

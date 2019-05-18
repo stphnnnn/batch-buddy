@@ -38,7 +38,9 @@ const App = () => {
   return (
     <div>
       <header className="Header mv5 flex items-center justify-between">
-        <h1 className="f3 ma0 red">BatchBuddy®</h1>
+        <h1 className="f3 ma0 red" style={{ userSelect: 'none' }}>
+          BatchBuddy®
+        </h1>
         <StoreProvider>
           <AddModal />
         </StoreProvider>
