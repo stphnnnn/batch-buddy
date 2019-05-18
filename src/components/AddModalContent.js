@@ -2,9 +2,12 @@ import React from 'react';
 import { AddForm } from './AddForm';
 
 export const AddModalContent = ({ closeModal, dispatch, item }) => {
-  const handleSubmit = item => {
-    dispatch({ type: item.id ? 'updateItem' : 'addItem', payload: item });
-  };
+  const handleSubmit = React.useCallback(
+    item => {
+      dispatch({ type: item.id ? 'updateItem' : 'addItem', payload: item });
+    },
+    [dispatch]
+  );
   return (
     <div
       style={{
