@@ -7,11 +7,8 @@ import { IngredientTotals } from './IngredientTotals';
 import { AddModal } from './AddModal';
 import { Search } from './Search';
 
-const CoolTab = props => {
-  // `isSelected` comes from `TabList` cloning the `CoolTab`.
+const StyledTab = props => {
   const { isSelected, children } = props;
-
-  // make sure to forward *all* props received from TabList
   return (
     <Tab
       className={classNames(
@@ -51,8 +48,8 @@ const App = () => {
           className="mb4 pb4 pt2 w-100 bg-white flex justify-around"
           style={{ position: 'sticky', top: 0 }}
         >
-          <CoolTab>Recipes</CoolTab>
-          <CoolTab>Ingredient Totals</CoolTab>
+          <StyledTab>Recipes</StyledTab>
+          <StyledTab>Ingredient Totals</StyledTab>
         </TabList>
         <TabPanels>
           <TabPanel>
