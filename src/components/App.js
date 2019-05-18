@@ -46,7 +46,7 @@ const App = () => {
         </StoreProvider>
       </header>
 
-      <Tabs>
+      <Tabs className="mb5">
         <TabList
           className="mb4 pb4 pt2 w-100 bg-white flex justify-around"
           style={{ position: 'sticky', top: 0 }}
