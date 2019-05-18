@@ -1,19 +1,19 @@
 import nanoid from 'nanoid';
 
-export function reducer(state, action) {
+export function reducer(prevState, action) {
   switch (action.type) {
     case 'addItem':
       return {
-        ...state,
+        ...prevState,
         items: [
-          ...state.items,
+          ...prevState.items,
           { ...action.payload, quantity: 1, id: `item_${nanoid()}` },
         ],
       };
     case 'updateItem':
       return {
-        ...state,
-        items: state.items.map(item => {
+        ...prevState,
+        items: prevState.items.map(item => {
           if (item.id === action.payload.id) {
             return action.payload;
           }
@@ -22,13 +22,13 @@ export function reducer(state, action) {
       };
     case 'removeItem':
       return {
-        ...state,
-        items: state.items.filter(item => item.id !== action.payload),
+        ...prevState,
+        items: prevState.items.filter(item => item.id !== action.payload),
       };
     case 'setQuantity':
       return {
-        ...state,
-        items: state.items.map(item => {
+        ...prevState,
+        items: prevState.items.map(item => {
           if (item.id !== action.id) return item;
           return {
             ...item,
@@ -45,9 +45,9 @@ export function reducer(state, action) {
         return results;
       }
       return {
-        ...state,
+        ...prevState,
         items: moveItem(
-          state.items,
+          prevState.items,
           action.payload.firstIndex,
           action.payload.secondIndex
         ),

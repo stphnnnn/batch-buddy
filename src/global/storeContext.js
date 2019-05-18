@@ -13,12 +13,13 @@ function StoreProvider(props) {
     initialState
   );
 
-  const value = React.useMemo(() => {
-    return {
+  const value = React.useMemo(
+    () => ({
       state,
       dispatch,
-    };
-  }, [state]);
+    }),
+    [state.items]
+  );
 
   return <StoreContext.Provider value={value} {...props} />;
 }
@@ -35,4 +36,4 @@ function useStore() {
   };
 }
 
-export { useStore, StoreProvider };
+export { StoreProvider, useStore };

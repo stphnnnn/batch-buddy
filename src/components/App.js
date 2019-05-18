@@ -33,43 +33,39 @@ const StyledTab = props => {
 const App = () => {
   const [searchValue, setSearchValue] = React.useState('');
   return (
-    <div>
-      <header className="Header mv5 flex items-center justify-between">
-        <h1 className="f3 ma0 red" style={{ userSelect: 'none' }}>
-          BatchBuddy®
-        </h1>
-        <StoreProvider>
+    <StoreProvider>
+      <div>
+        <header className="Header mv5 flex items-center justify-between">
+          <h1 className="f3 ma0 red" style={{ userSelect: 'none' }}>
+            BatchBuddy®
+          </h1>
           <AddModal />
-        </StoreProvider>
-      </header>
+        </header>
 
-      <Tabs className="mb5">
-        <TabList
-          className="mb4 pb4 pt2 w-100 bg-white flex justify-around"
-          style={{ position: 'sticky', top: 0 }}
-        >
-          <StyledTab>Recipes</StyledTab>
-          <StyledTab>Ingredient Totals</StyledTab>
-        </TabList>
-        <TabPanels>
-          <TabPanel>
-            <Search
-              value={searchValue}
-              onChange={event => setSearchValue(event.target.value)}
-              className="mb5"
-            />
-            <StoreProvider>
+        <Tabs className="mb5">
+          <TabList
+            className="mb4 pb4 pt2 w-100 bg-white flex justify-around"
+            style={{ position: 'sticky', top: 0 }}
+          >
+            <StyledTab>Recipes</StyledTab>
+            <StyledTab>Ingredient Totals</StyledTab>
+          </TabList>
+          <TabPanels>
+            <TabPanel>
+              <Search
+                value={searchValue}
+                onChange={event => setSearchValue(event.target.value)}
+                className="mb5"
+              />
               <RecipeList searchValue={searchValue} />
-            </StoreProvider>
-          </TabPanel>
-          <TabPanel>
-            <StoreProvider>
+            </TabPanel>
+            <TabPanel>
               <IngredientTotals />
-            </StoreProvider>
-          </TabPanel>
-        </TabPanels>
-      </Tabs>
-    </div>
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
+      </div>
+    </StoreProvider>
   );
 };
 
