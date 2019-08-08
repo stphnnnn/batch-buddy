@@ -44,6 +44,7 @@ const RecipeListItem = ({ item, index, dispatch }) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 type="number"
+                step="any"
                 min={0}
                 value={item.quantity}
               />

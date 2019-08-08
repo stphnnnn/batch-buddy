@@ -8,9 +8,9 @@
     "convert-units": "2.3.4",
     "formik": "1.5.1",
     "nanoid": "2.0.1",
-    "react": "^16.8.4",
+    "react": "16.8.6",
     "react-beautiful-dnd": "10.1.0",
-    "react-dom": "^16.8.4",
+    "react-dom": "16.8.6",
     "react-mega-modal": "^0.1.4",
     "react-number-format": "4.0.7",
     "react-scripts": "2.1.8",
@@ -32,7 +32,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "node-sass": "4.11.0",
+    "node-sass": "4.12.0",
     "prettier": "1.16.4"
   }
 }

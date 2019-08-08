@@ -50,6 +50,7 @@ export const IngredientInput = ({
           placeholder="0"
           showLabel={isFirst(index)}
           type="number"
+          step="any"
         />
       )}
       <div className="flex items-end w-15 mr1">
@@ -61,6 +62,7 @@ export const IngredientInput = ({
           onChange={handleAmountChange}
           showLabel={isFirst(index)}
           type="number"
+          step="any"
         />
         <UnitInput
           labelText="Unit"
